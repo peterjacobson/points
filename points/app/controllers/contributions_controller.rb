@@ -2,7 +2,6 @@ class ContributionsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
 
-
   def index
     point_id = params[:id]
     @point = Point.find(point_id)
