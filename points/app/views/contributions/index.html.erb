@@ -24,13 +24,30 @@
 <ul>
   <% @contributions.each do |contribution| %>
     <li>
-      <img src="<%= contribution.image_url %>" />
-      <h2><%= contribution.title %></h2>
-      <p><%= contribution.text %></p>
-      <p>score: <%= contribution.score %></p>
-      <p>author: <%= contribution.author.name %></p>
-      <%= button_to "upvote", upvote_contribution_path(contribution.id) %>
-      <%= button_to "downvote", downvote_contribution_path(contribution.id) %>
+      <img src="<%= contribution[:contribution].image_url %>" />
+      <h2><%= contribution[:contribution].title %></h2>
+      <p><%= contribution[:contribution].text %></p>
+      <p>score: <%= contribution[:contribution].score %></p>
+      <p>author: <%= contribution[:contribution].author.name %></p>
+      <%= button_to "upvote", upvote_contribution_path(contribution[:contribution].id) %>
+      <%= button_to "downvote", downvote_contribution_path(contribution[:contribution].id) %>
+      <ul>
+        <form action='/comments', method='post'>
+          <h3>Add Comment</h3>
+          <input type='hidden' name='contribution_id' value='<%=contribution[:contribution].id%>'>
+          Text:<br>
+          <input type="text" name="text">
+          <input type='submit' />
+        </form>
+        <% contribution[:comments].each do |comment| %>
+          <li>
+            <p><%= comment.text %></p>
+            <p>score: <%= comment.score %></p>
+            <%= button_to "upvote", upvote_comment_path(comment.id) %>
+            <%= button_to "downvote", downvote_comment_path(comment.id) %>
+          </li>
+        <% end %>
+      </ul>
     </li>
   <% end %>
 </ul>

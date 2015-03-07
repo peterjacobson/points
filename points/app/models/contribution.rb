@@ -7,3 +7,4 @@ class Contribution < ActiveRecord::Base
   end
 
 end
+

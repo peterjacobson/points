@@ -22,3 +22,11 @@ Point.all.each do |point|
     point.contributions.create(user_id: User.all.sample.id, title: Faker::Lorem.sentence, text: Faker::Lorem.paragraph, image_url: Faker::Company.logo, score: rand(-5..40))
   end
 end
+
+Contribution.all.each do |contribution|
+
+  rand(1..5).times do
+    contribution.comments.create(user_id: User.all.sample.id, text: Faker::Lorem.paragraph, score: rand(-5..30))
+  end
+
+end

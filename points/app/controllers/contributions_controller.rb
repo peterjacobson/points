@@ -5,7 +5,7 @@ class ContributionsController < ApplicationController
   def index
     point_id = params[:id]
     @point = Point.find(point_id)
-    @contributions = @point.contributions
+    @contributions = @point.contributions_and_comments
   end
 
   def create
