@@ -1,0 +1,27 @@
+<h1>Opportunities & Problems</h1>
+
+<form action='/points', method='post'>
+  Title:<br>
+  <input type="text" name="title">
+  <br>
+  Description:<br>
+  <input type="text" name="description">
+  <br>
+  Tag:<br>
+  <input type="text" name="tag">
+  <input type='submit' />
+</form>
+
+<ul>
+  <% @points.each do |point| %>
+    <li>
+      <a href="/points/<%=point.id%>/contributions"><h2><%= point.title %></h2></a>
+      <p><%= point.description %></p>
+      <p>score: <%= point.score %></p>
+      <p>tag: <%= point.tag %></p>
+      <p>author: <%= point.author.name %></p>
+      <%= button_to "upvote", upvote_point_path(point.id) %>
+      <%= button_to "downvote", downvote_point_path(point.id) %>
+    </li>
+  <% end %>
+</ul>

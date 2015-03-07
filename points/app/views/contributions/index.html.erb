@@ -1,0 +1,36 @@
+<h1><%= @point.title %></h1>
+<p><%= @point.description %></p>
+<p>score: <%= @point.score %></p>
+<p>tag: <%= @point.tag %></p>
+<p>author: <%= @point.author.name %></p>
+<%= button_to "upvote", upvote_point_path(@point.id) %>
+<%= button_to "downvote", downvote_point_path(@point.id) %>
+
+<h2>Contributions</h2>
+
+<form action='/contributions', method='post'>
+  <input type='hidden' name='point_id' value='<%=@point.id%>'>
+  Title:<br>
+  <input type="text" name="title">
+  <br>
+  Description:<br>
+  <input type="text" name="text">
+  <br>
+  Image Url:<br>
+  <input type="text" name="image_url">
+  <input type='submit' />
+</form>
+
+<ul>
+  <% @contributions.each do |contribution| %>
+    <li>
+      <img src="<%= contribution.image_url %>" />
+      <h2><%= contribution.title %></h2>
+      <p><%= contribution.text %></p>
+      <p>score: <%= contribution.score %></p>
+      <p>author: <%= contribution.author.name %></p>
+      <%= button_to "upvote", upvote_contribution_path(contribution.id) %>
+      <%= button_to "downvote", downvote_contribution_path(contribution.id) %>
+    </li>
+  <% end %>
+</ul>

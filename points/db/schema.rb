@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307110244) do
+ActiveRecord::Schema.define(version: 20150307111846) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "contribution_id"
+    t.text     "text"
+    t.integer  "score",           default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  create_table "contributions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "point_id"
+    t.string   "title"
+    t.text     "text"
+    t.string   "image_url"
+    t.integer  "score",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +56,17 @@ ActiveRecord::Schema.define(version: 20150307110244) do
   add_index "groups", ["email"], name: "index_groups_on_email", unique: true
   add_index "groups", ["reset_password_token"], name: "index_groups_on_reset_password_token", unique: true
 
+  create_table "points", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "tag"
+    t.integer  "score",       default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -45,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150307110244) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "username"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
