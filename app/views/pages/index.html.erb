@@ -24,6 +24,9 @@
       <p>score: <%= point.score %></p>
       <p>tag: <%= point.tag %></p>
       <p>author: <%= point.author.name %></p>
+      <% if point.image_url %>
+        <img src="<%=point.image_url%>">
+      <% end %>
       <%= button_to "upvote", upvote_point_path(point.id) %>
       <%= button_to "downvote", downvote_point_path(point.id) %>
     </li>
