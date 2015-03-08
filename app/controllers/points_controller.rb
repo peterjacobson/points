@@ -6,7 +6,8 @@ class PointsController < ApplicationController
     title = params[:title]
     description = params[:description]
     tag = params[:tag]
-    current_user.points.create(title: title, description: description, tag: tag)
+    image_url = params[:image_url]
+    current_user.points.create(title: title, description: description, tag: tag, image_url: image_url)
     redirect_to :back
   end
 
