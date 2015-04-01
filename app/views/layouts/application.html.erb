@@ -2,13 +2,19 @@
 <html>
 <head>
   <title>Points</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" src="/main-skeleton.css">
-  <link rel="stylesheet" src="/main.css">
+  <link rel="stylesheet" type="text/css" src="/normalize.css"/>
+  <link rel="stylesheet" type="text/css" src="/main-skeleton.css"/>
+  <link rel="stylesheet" type="text/css" src="/main.css" media="screen, handheld"/>
+  <!-- <link rel="stylesheet" type="text/css" src="/enhanced.css" media="screen and (min-width: 40.5em)"/> for big screens-->
+  <!--[if (lt IE 9)&(!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="enhanced.css" />
+<![endif]-->
 </head>
-<body>
+<body id="page">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>

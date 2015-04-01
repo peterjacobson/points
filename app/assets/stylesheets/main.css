@@ -1,4 +1,33 @@
-header {
-  width: 100%;
-  margin: auto;
+/************Reset**************/
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
+ol, ul {
+	list-style: none;
+}
+header, footer, nav, section, article, hgroup, figure {
+	display: block;
+}
+legend {
+	display: none;
+}
+a {
+  text-decoration: none;
+}
+/************End Reset**************/
+
+header {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  top: 0;
+  overflow: hidden;
+  text-align: left;
+  display: block;
+}
+
+  header h1 {
+    margin: 0.2em 0.1em;
+  }
