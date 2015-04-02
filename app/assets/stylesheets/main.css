@@ -1,4 +1,7 @@
 /************Reset**************/
+* {
+	box-sizing: border-box;
+}
 html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section {
 	margin: 0;
 	padding: 0;
@@ -15,11 +18,21 @@ legend {
 }
 a {
   text-decoration: none;
+	color: #111
 }
 /************End Reset**************/
 
+/************Global**************/
+h1,
+h2 {
+	font-family: "Permanent Marker", cursive;
+}
+/************End Global**************/
+
+/************Structure**************/
 header {
   position: relative;
+	background: #111;
   width: 100%;
   margin: 0 auto;
   top: 0;
@@ -27,7 +40,72 @@ header {
   text-align: left;
   display: block;
 }
+.app-bar h1 {
+	color: #eee;
+	font-size: 2.5em;
+}
+.logo {
+	float: left;
+	margin: 0 0 0 0.6em;
+}
+.nav-anchors {
+	float: right;
+	margin: .7em 0 0 0;
+}
+	.nav-anchors a {
+		padding: 0.5em 0.5em 0 0.5em;
+		border-left: 1px solid #222;
+		font-size: 1.3em;
+		font-family: "Permanent Marker", cursive;
+		color: #eee;
+	}
+.search {
+	clear: both;
+	border-top: 1px solid #222;
+	padding: 0.4em 0.4em;
+	position: relative;
+}
+	.search fieldset {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	.search label {
+		display: none;
+	}
+	.search input[type=search] {
+		background: url() no-repeat 95% 50% #111;
+		display: inline-block;
+		color: #999;
+		border: 1px solid #999;
+		font-size: 0.8em;
+		border-radius: 0.5em;
+		width: 90%;
+		padding: 0 0.5em;
+	}
+	.search input[type=submit] {
+		background: none;
+		display: inline-block;
+		padding: 0;
+		border: 0;
+		width: 2em;
+		height: 2em;
+		text-indent: -99999em;
+		position: absolute;
+		top: 0;
+		right: 1em;
+		z-index: 1;
+		width: 14%;
+		height: 100%;
+	}
+.nav {
+	background: #333;
+}
+	.nav li {
+		display: inline-block;
+		width: 40%;
+		border: 1px
+	}
 
-  header h1 {
-    margin: 0.2em 0.1em;
-  }
+
+/************End Structure**************/
