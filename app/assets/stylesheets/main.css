@@ -51,6 +51,7 @@ header {
 .nav-anchors {
 	float: right;
 	margin: .7em 0 0 0;
+	border-bottom: 2px solid #f1c232;
 }
 	.nav-anchors a {
 		padding: 0.5em 0.5em 0 0.5em;
@@ -74,13 +75,14 @@ header {
 		display: none;
 	}
 	.search input[type=search] {
-		background: url() no-repeat 95% 50% #111;
+		background: url('search-2-256.png') no-repeat 95% 50% #eee;
+		background-size: 20%;
 		display: inline-block;
-		color: #999;
-		border: 1px solid #999;
+		color: #111;
+		border: 2px solid #f1c232;
 		font-size: 0.8em;
 		border-radius: 0.5em;
-		width: 90%;
+		width: 95%;
 		padding: 0 0.5em;
 	}
 	.search input[type=submit] {
@@ -103,8 +105,12 @@ header {
 }
 	.nav li {
 		display: inline-block;
-		width: 40%;
-		border: 1px
+		width: 43%;
+		padding: 0.3em;
+		margin: 0.5em;
+		background: #eee;
+		border-radius: 0.5em;
+		border: 2px solid #f1c232;
 	}
 
 
