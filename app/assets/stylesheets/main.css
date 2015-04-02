@@ -63,7 +63,7 @@ header {
 .search {
 	clear: both;
 	border-top: 1px solid #222;
-	padding: 0.4em 0.4em;
+	padding: 0.8em 0.4em;
 	position: relative;
 }
 	.search fieldset {
@@ -103,15 +103,26 @@ header {
 .nav {
 	background: #333;
 }
-	.nav li {
-		display: inline-block;
-		width: 43%;
-		padding: 0.3em;
-		margin: 0.5em;
-		background: #eee;
-		border-radius: 0.5em;
-		border: 2px solid #f1c232;
+	.nav .nav-list {
+		padding: 0 0.4em 0.6em;
 	}
+		.nav li {
+			display: inline-block;
+			width: 47%;
+			margin: 0.4em 0;
+			padding: 0.3em;
+			background: #eee;
+			border-radius: 0.5em;
+			border: 2px solid #f1c232;
+		}
+			.nav li:nth-child(even) {
+				margin-left: 1em;
+			}
+			.nav .sort-btns li {
+				background: url('generic-sorting-256.png') no-repeat 5% 50% #eee;
+				background-size: 30%;
+				text-indent: 3.5em;
+			}
 
 
 /************End Structure**************/
