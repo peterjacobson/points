@@ -9,63 +9,61 @@
     <fieldset>
       <legend>Search points</legend>
       <label for="search-site">Search points</label>
-      <input type="search" id="search-site" placeholder="Search points">
+      <input type="search" id="search-site" placeholder="Search points" class="btn">
       <input type="submit" value="Search">
     </fieldset>
   </form>
   <ul class="nav-list sort-btns">
-    <li><a href="#"> Important</a></li>
-    <li><a href="#">Council</a></li>
-    <li><a href="#">Community</a></li>
-    <li><a href="#">New</a></li>
+    <li class="btn"><a href="#"> Important</a></li>
+    <li class="btn"><a href="#">Council</a></li>
+    <li class="btn"><a href="#">Community</a></li>
+    <li class="btn"><a href="#">New</a></li>
   </ul>
-  <ul class="nav-list" role="navigation">
-    <li><a href="#">Why is this great?</a></li>
-    <li><a href="#">Why we need you...</a></li>
+  <ul class="nav-list site-nav" role="navigation">
+    <li class="about btn"><a href="#">Why is this great?</a></li>
+    <li class="you btn"><a href="#">Why we need you</a></li>
   </ul>
 </nav>
-<div class="content">
-  <div class="content points" role="main">
+<div class="content points" role="main">
 
-    <div id="new-point-anchor" class="user-input-reveal new-point-anchor">
-      <a href="#new-point">I have a new point!</a>
-    </div>
-
-    <div id="new-point" class="reveal">
-      <form action='/points', method='post'>
-        Title:<br>
-        <input type="text" name="title">
-        <br>
-        Description:<br>
-        <input type="text" name="description">
-        <br>
-        Tag:<br>
-        <input type="text" name="tag">
-        <br>
-        Image-Url:<br>
-        <input type="text" name="image_url">
-        <br>
-        <input type='submit' />
-      </form>
-    </div>
-
-    <ul>
-      <% @points.each do |point| %>
-        <li>
-          <a href="/points/<%=point.id%>/contributions"><h2><%= point.title %></h2></a>
-          <p><%= point.description %></p>
-          <p>score: <%= point.score %></p>
-          <p>tag: <%= point.tag %></p>
-          <p>author: <%= point.author.email %></p>
-          <% if point.image_url %>
-            <img src="<%=point.image_url%>">
-          <% end %>
-          <%= button_to "upvote", upvote_point_path(point.id) %>
-          <%= button_to "downvote", downvote_point_path(point.id) %>
-        </li>
-      <% end %>
-    </ul>
+  <div id="new-point-anchor" class="user-input-reveal new-point-anchor btn">
+    <a href="#new-point">I have a new point!</a>
   </div>
+
+  <div id="new-point" class="reveal">
+    <form action='/points', method='post'>
+      Title:<br>
+      <input type="text" name="title">
+      <br>
+      Description:<br>
+      <input type="text" name="description">
+      <br>
+      Tag:<br>
+      <input type="text" name="tag">
+      <br>
+      Image-Url:<br>
+      <input type="text" name="image_url">
+      <br>
+      <input type='submit' />
+    </form>
+  </div>
+
+  <ul>
+    <% @points.each do |point| %>
+      <li>
+        <a href="/points/<%=point.id%>/contributions"><h2><%= point.title %></h2></a>
+        <p><%= point.description %></p>
+        <p>score: <%= point.score %></p>
+        <p>tag: <%= point.tag %></p>
+        <p>author: <%= point.author.email %></p>
+        <% if point.image_url %>
+          <img src="<%=point.image_url%>">
+        <% end %>
+        <%= button_to "upvote", upvote_point_path(point.id) %>
+        <%= button_to "downvote", downvote_point_path(point.id) %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 <footer>
   <ul>

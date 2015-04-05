@@ -27,6 +27,16 @@ h1,
 h2 {
 	font-family: "Permanent Marker", cursive;
 }
+
+.btn {
+	border: 2px solid #f1c232;
+	border-radius: 0.5em;
+	padding: 0.2em;
+	background: #eee;
+	font-family: 'Permanent Marker', cursive;
+	color: #333;
+	overflow: hidden;
+}
 /************End Global**************/
 
 /************Structure**************/
@@ -79,9 +89,6 @@ header {
 		background-size: 20%;
 		display: inline-block;
 		color: #111;
-		border: 2px solid #f1c232;
-		font-size: 0.8em;
-		border-radius: 0.5em;
 		width: 95%;
 		padding: 0 0.5em;
 	}
@@ -110,19 +117,32 @@ header {
 			display: inline-block;
 			width: 47%;
 			margin: 0.4em 0;
-			padding: 0.3em;
-			background: #eee;
-			border-radius: 0.5em;
-			border: 2px solid #f1c232;
+			/*font-size: 1.1em;*/
 		}
 			.nav li:nth-child(even) {
 				margin-left: 1em;
 			}
 			.nav .sort-btns li {
-				background: url('generic-sorting-256.png') no-repeat 5% 50% #eee;
+				background: url('generic-sorting-256.png') no-repeat -5% 50% #eee;
 				background-size: 30%;
-				text-indent: 3.5em;
+				text-indent: 2.8em;
 			}
 
+		.nav .site-nav li {
+			border-width: 4px;
+		}
+			.nav .about {
+				border-color: #76a5af;
+			}
+			.nav .you {
+				border-color: #93c47d;
+			}
+
+.points {
+	margin: 0.8em 1.2em 0;
+}
+	#new-point-anchor {
+
+	}
 
 /************End Structure**************/
