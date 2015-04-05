@@ -26,42 +26,53 @@
 </nav>
 <div class="content points" role="main">
 
-  <div id="new-point-anchor" class="user-input-reveal new-point-anchor btn">
-    <a href="#new-point">I have a new point!</a>
-  </div>
 
-  <div id="new-point" class="reveal">
+  <div id="new-point" class="reveal btn call-to-action">
+    <div id="new-point-anchor" class="user-input-reveal new-point-anchor btn">
+      <a href="#new-point">I have a new point!</a>
+    </div>
     <form action='/points', method='post'>
       Title:<br>
       <input type="text" name="title">
       <br>
       Description:<br>
-      <input type="text" name="description">
+      <input type="textarea" rows="4" name="description">
       <br>
-      Tag:<br>
-      <input type="text" name="tag">
-      <br>
+      <!-- Tag:<br> -->
+      <!-- <input type="text" name="tag">
+      <br> -->
       Image-Url:<br>
       <input type="text" name="image_url">
       <br>
-      <input type='submit' />
+      <input type='submit' class='btn call-to-action' />
     </form>
   </div>
 
   <ul>
     <% @points.each do |point| %>
-      <li>
-        <a href="/points/<%=point.id%>/contributions"><h2><%= point.title %></h2></a>
-        <p><%= point.description %></p>
-        <p>score: <%= point.score %></p>
-        <p>tag: <%= point.tag %></p>
-        <p>author: <%= point.author.email %></p>
-        <% if point.image_url %>
-          <img src="<%=point.image_url%>">
-        <% end %>
-        <%= button_to "upvote", upvote_point_path(point.id) %>
-        <%= button_to "downvote", downvote_point_path(point.id) %>
+      <li class="one-point btn">
+        <div class="point-title">
+          <h2><%= point.title %></h2>
+          <div class="icon-bar">
+            <%= button_to "upvote", upvote_point_path(point.id) %>
+            <p>score: <%= point.score %></p>
+            <button class="share" href="#">
+            <!-- <p>author: <%= point.author.email %></p> -->
+            <!-- <%= button_to "downvote", downvote_point_path(point.id) %> -->
+          </div>
+          <a href="/points/<%=point.id%>/contributions">
+            <div class="point-overview">
+              <p><%= point.description %></p>
+            </div>
+            <div class="point-image">
+              <img src="<%=point.image_url%>">
+            </div>
+            <!-- <p>tag: <%= point.tag %></p> -->
+          </a>
+        </div>
       </li>
+        <!-- <% if point.image_url %>
+        <% end %> -->
     <% end %>
   </ul>
 </div>
