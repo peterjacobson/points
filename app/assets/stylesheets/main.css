@@ -24,7 +24,9 @@ a {
 
 /************Global**************/
 h1,
-h2 {
+h2,
+h3,
+p {
 	font-family: "Permanent Marker", cursive;
 }
 
@@ -114,6 +116,8 @@ header {
 	}
 .nav {
 	background: #333;
+	height: 0;
+	overflow: hidden;
 }
 	.nav .nav-list {
 		padding: 0 0.4em 0.6em;
@@ -142,6 +146,10 @@ header {
 			.nav .you {
 				border-color: #93c47d;
 			}
+body {
+	background: #000;
+
+}
 
 .points {
 	margin: 0.8em 0.4em 0;
@@ -151,6 +159,7 @@ header {
 		padding: 0;
 		border-radius: 0.8em;
 		margin-bottom: 0.8em;
+		box-shadow: 0.1em 0.1em #fff;
 	}
 		#new-point-anchor {
 			background: url('') no-repeat 95% 20% #f1c232;
@@ -159,7 +168,9 @@ header {
 		}
 
 		#new-point form {
-			padding: 0.4em;
+			padding: 0 0.4em 0;
+			height: 0;
+			overflow: hidden;
 		}
 
 			#new-point input[type="text"],
@@ -173,14 +184,94 @@ header {
 			#new-point .call-to-action {
 				margin-top: 0.7em;
 				margin-left: 25%;
+				margin-bottom: 0.8em;
 				width: 50%;
 			}
 
 	.points .one-point {
 		margin-bottom: 0.8em;
+		border: none;
 	}
 
+	.points .point-title {
+		margin-bottom: 0.4em;
+	}
 
+button.share {
+	box-sizing: content-box;
+	background: url('sharethis-256.png') no-repeat 50% 10%;
+	background-size: 1.2em;
+	background-origin: content-box;
+	height: 1.2em;
+	width: 1.2em;
+	border: none;
+	padding: 0.3em;
+}
+
+.vertical-aligner > * {
+	vertical-align: middle;  /* Align children to middle of line */
+}
+	.points .icon-bar {
+		display: inline-block;
+		width: 10%;
+		padding: 0.4em 0;
+		background: #ddd;
+		border-radius: 0.6em;
+	}
+		.points input[type="submit"] {
+			box-sizing: content-box;
+			background: url('arrow-135-256.png') no-repeat 50% 10%;
+			background-size: 1.4em;
+			background-origin: content-box;
+			height: 1.4em;
+			width: 1.4em;
+			border: none;
+			text-indent: -9999px;
+			padding: 0.3em;
+		}
+		.points .icon-bar p {
+			padding: 0 0.3em;
+			text-indent: 0.2em;
+			color: #555;
+			height: 100%;
+		}
+	.points a {
+		display: inline-block;
+		width: 88%;
+	}
+		.points .point-overview {
+			display: inline-block;
+			width: 49%;
+			color: #333;
+			overflow: hidden;
+		}
+		.points .point-image {
+			display: inline-block;
+			width: 49%;
+		}
+			.points .point-image img {
+				border-radius: 0.5em;
+				width: 100%;
+			}
+footer {
+	background: #111;
+	clear: both;
+}
+	footer li {
+		color: #bbb;
+		text-align: center;
+		margin: 0.8em;
+	}
+	footer .top {
+		color: #bbb;
+		/*text-align: left;*/
+		text-indent: 2em;
+		border: none;
+		background: url('arrow-141-256.png') no-repeat 10% 50% #222;
+		background-size: 20%;
+		margin-bottom: 0.8em;
+		padding: 0.2em 1.5em;
+	}
 
 
 /************End Structure**************/
